@@ -1,0 +1,103 @@
+        <!DOCTYPE html>
+        <!--
+            Licensed to the Apache Software Foundation (ASF) under one
+            or more contributor license agreements.  See the NOTICE file
+            distributed with this work for additional information
+            regarding copyright ownership.  The ASF licenses this file
+            to you under the Apache License, Version 2.0 (the
+            "License"); you may not use this file except in compliance
+            with the License.  You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+            Unless required by applicable law or agreed to in writing,
+            software distributed under the License is distributed on an
+            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+             KIND, either express or implied.  See the License for the
+            specific language governing permissions and limitations
+            under the License.
+        -->
+        <html>
+            <head>
+                <!--
+                Customize this policy to fit your own app's needs. For more guidance, see:
+                    https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+                Some notes:
+                    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+                    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+                    * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                        * Enable inline JS: add 'unsafe-inline' to default-src
+                -->
+<!--                <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: ; default-src * data: gap: https://griffis.edumedia.ca/mad9022/reviewr/review/get/ 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+                <meta name="format-detection" content="telephone=no">
+                <meta name="msapplication-tap-highlight" content="no">
+                <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+                <link rel="stylesheet" type="text/css" href="css/index.css">
+
+                  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
+                <link rel="stylesheet" type="text/css" href="css/font-awesome-4.5.0/css/font-awesome.css">
+                 <script type="text/javascript" src="cordova.js"></script>
+                <script type="text/javascript" src="js/index.js"></script>
+                <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+                <title>ReviewR App</title>
+            </head>
+            <body>
+               
+                     <section data-role="page" id="listreview" class="inactive-page">
+                    <header>
+                        <h2>ReviewR</h2>
+                        <h3>Home Page</h3><br/>
+                    </header>
+                          <div class="wrapper">
+                       <ul>    
+                       </ul>
+                       
+                         </div>
+                         <button class="btnfab" id="btnfab" data-href="writereview">+</button>
+                     </section>
+
+                     <section data-role="page" id="writereview" class="inactive-page">
+                    <header>
+                        
+                        <h2><i class="fa fa-chevron-circle-left back"></i>ReviewR</h2>
+                        <h3 class="head">Add Review</h3>
+                    </header>
+                         <div class="wrapper">
+                         <form id="form1">
+                            <input type="text" placeholder="title" id="title"><br/>
+                            <textarea placeholder="review" id="review"></textarea><br/>
+                            <span class="star-rating">  
+                                <input type="radio" name="rating" value="1"><i></i>  
+                                <input type="radio" name="rating" value="2"><i></i>  
+                                <input type="radio" name="rating" value="3"><i></i>   
+                                <input type="radio" name="rating" value="4"><i></i>  
+                                <input type="radio" name="rating" value="5"><i></i>
+                              </span><br/>
+                             
+                             <i class="fa fa-camera" id="camera"></i><br/>
+                             <img id="dispimg" /><br/>
+                             <i class="fa fa-times-circle" id="close"></i>
+                             <i class="fa fa-check-circle" id="check"></i>
+                        </form>
+                             </div>
+                    </section>
+                        
+                    
+                    <section data-role="page" id="readreview">
+                    <header>
+                        <h2><i class="fa fa-chevron-circle-left back1"></i>ReviewR</h2>
+                        <h3 class="head">Review Details</h3>
+                    </header>
+                        <div class="wrapper">
+                        <div class="content"> 
+                        <label placeholder="title" id="fetchedtitle"></label><br/>
+                        <textarea readonly id="fetchedreview"></textarea><br/>
+                        <img id="displayimg" height=100 width=100/> <br/>
+                        <div id="displayrate"></div>
+                        <i class="fa fa-check-circle" id="checkreview"></i>
+                       </div>
+                            </div>
+                    </section>
+                 
+            </body>
+        </html>
